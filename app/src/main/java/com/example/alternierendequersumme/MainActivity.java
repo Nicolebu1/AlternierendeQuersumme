@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         textview2 = findViewById(R.id.textView2);
         btn = findViewById(R.id.button);
         editText = findViewById(R.id.editText);
-
         editText.setHint("Eingabe");
 
     }
