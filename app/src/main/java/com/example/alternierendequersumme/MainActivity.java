@@ -7,7 +7,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-
 public class MainActivity extends AppCompatActivity {
 
     private TextView textview;
@@ -26,6 +25,5 @@ public class MainActivity extends AppCompatActivity {
         btn = findViewById(R.id.button);
         editText = findViewById(R.id.editText);
         editText.setHint("Eingabe");
-
     }
 }
