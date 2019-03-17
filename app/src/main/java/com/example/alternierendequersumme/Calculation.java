@@ -1,7 +1,7 @@
 package com.example.alternierendequersumme;
 
 class Calculation {
-    public static String calculateAlternierendeQuersumme(String matrikelnummer) {
+    public static void calculateAlternierendeQuersumme(String matrikelnummer) {
         char[] chars = matrikelnummer.toCharArray();
         int[] numbers = new int[chars.length];
         int sum = 0;
@@ -29,6 +29,6 @@ class Calculation {
         String back = "Die alternierende Quersumme Ihrer Matrikelnummer lautet: "
                 + Integer.toString(sum) + ". Sie ist " + oddOrEven + ".";
 
-        return back;
+        MainActivity.response.setText(back);
     }
 }

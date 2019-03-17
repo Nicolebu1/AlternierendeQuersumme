@@ -33,8 +33,7 @@ class Connection {
 
                         @Override
                         public void run() {
-                            String back = responseString + '\n' + Calculation.calculateAlternierendeQuersumme(matrikelnummer);
-                            MainActivity.response.setText(back);
+                            MainActivity.response.setText(responseString + ".");
                         }
 
                     });
