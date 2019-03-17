@@ -10,12 +10,12 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView textview;
-    TextView textview2;
-    static TextView response;
-    Button btn;
-    EditText editText;
-    String matrikelnummer;
+    protected TextView textview;
+    protected TextView textview2;
+    protected static TextView response;
+    protected Button btn;
+    protected EditText editText;
+    protected String matrikelnummer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

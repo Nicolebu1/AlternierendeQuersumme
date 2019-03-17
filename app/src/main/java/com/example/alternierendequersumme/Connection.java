@@ -7,9 +7,10 @@ import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.Socket;
 
-public class Connection {
+class Connection {
 
     final Handler handler = new Handler();
+    protected String responseString;
 
     protected void sendToServer(final String matrikelnummer) {
 
@@ -26,17 +27,19 @@ public class Connection {
                     dataOutputStream.writeBytes(matrikelnummer + '\n');
 
                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                    final String responseString = bufferedReader.readLine();
+                    responseString = bufferedReader.readLine();
 
                     handler.post(new Runnable() {
 
                         @Override
                         public void run() {
-                            MainActivity.response.setText(responseString);
+                            String back = responseString + '\n' + Calculation.calculateAlternierendeQuersumme(matrikelnummer);
+                            MainActivity.response.setText(back);
                         }
 
                     });
 
+                    bufferedReader.close();
                     dataOutputStream.close();
                     socket.close();
 
@@ -45,7 +48,7 @@ public class Connection {
                 }
             }
         });
-
         thread.start();
     }
 }
+
